@@ -13,14 +13,15 @@ module.exports = function () {
       .pipe($.plumber({errorHandler: $.notify.onError('<%= error.message %>')}))
       .pipe($.stylus({
         use: nib(),
+        "resolve url": true,
         define: {
           'url': stylus.resolver()
         }
       }))
-      .pipe($.pleeease({
-        fallbacks: {autoprefixer: ['last 4 versions']},
-        minifier: false
-      }))
+      // .pipe($.pleeease({
+      //   fallbacks: {autoprefixer: ['last 4 versions']},
+      //   minifier: false
+      // }))
       .pipe(gulp.dest(__CONFIG.path.style.dest))
       .pipe($.browser.stream());
   });
