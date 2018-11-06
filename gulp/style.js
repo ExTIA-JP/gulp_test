@@ -18,10 +18,10 @@ module.exports = function () {
           'url': stylus.resolver()
         }
       }))
-      // .pipe($.pleeease({
-      //   fallbacks: {autoprefixer: ['last 4 versions']},
-      //   minifier: false
-      // }))
+      .pipe($.pleeease({
+        fallbacks: {autoprefixer: ['last 4 versions']},
+        minifier: false
+      }))
       .pipe(gulp.dest(__CONFIG.path.style.dest))
       .pipe($.browser.stream());
   });
