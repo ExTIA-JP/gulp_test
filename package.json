@@ -37,7 +37,7 @@
     "merge-stream": "^0.1.8",
     "nib": "^1.0.4",
     "node-libs-browser": "^0.5.2",
-    "run-sequence": "^1.1.1",
+    "run-sequence": "^2.2.1",
     "through2": "^2.0.0",
     "uglify-save-license": "^0.4.1",
     "underscore-template-loader": "^0.2.6",
