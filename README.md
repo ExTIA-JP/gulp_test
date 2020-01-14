@@ -102,8 +102,8 @@ data/xxx.json
 
 ## Versions
 
-- node 4.5.0
-- npm 5.0.4
+- node 8.11.4
+- npm 5.6.0
 
 ## 使用ツール
 
