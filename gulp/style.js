@@ -10,7 +10,9 @@ var sass = require('gulp-sass');
 module.exports = function () {
   gulp.task('style', function() {
     return gulp.src(__CONFIG.path.style.src)
-      .pipe(sass())
+      .pipe(sass({
+        outputStyle: 'expanded'
+      }))
       .pipe($.plumber({errorHandler: $.notify.onError('<%= error.message %>')}))
       .pipe($.pleeease({
         fallbacks: {autoprefixer: ['last 4 versions']},
