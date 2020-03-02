@@ -49,10 +49,10 @@ html/xxx.html
 assets
 
 ```javascript
-style/
+sass/
   _partial/... // 出力されません
-  common/css/common.styl
-  css/xxx.styl
+  common/css/common.scss
+  css/xxx.scss
 ```
 
 dist後
@@ -107,5 +107,5 @@ data/xxx.json
 
 ## 使用ツール
 
-- [Stylus](https://learnboost.github.io/stylus/)
+- [Sass](https://sass-lang.com/)
 - [EJS](http://www.embeddedjs.com/)

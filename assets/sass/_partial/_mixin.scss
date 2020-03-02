@@ -1,0 +1,50 @@
+//----------------------------------------------------
+// mixin
+//----------------------------------------------------
+
+// フォントサイズ rem
+@mixin rem($size) {
+  font-size: $size;
+  font-size: ($size / 16px) * 1rem;
+}
+
+// media
+$screen-sm: 767px;
+$screen-md: 992px;
+$screen-lag: 768px;
+
+@mixin media($breakpoint) {
+  @if $breakpoint == sp {
+    @media screen and (max-width: $screen-sm) {
+      @content;
+    }
+  } @else if $breakpoint == tab {
+    @media screen and (max-width: $screen-md) {
+      @content;
+    }
+  } @else if $breakpoint == pc {
+    @media screen and (min-width: $screen-lag) {
+      @content;
+    }
+  } @else if $breakpoint == sp-min {
+    @media screen and (max-width: 320px) {
+      @content;
+    }
+  } @else if $breakpoint == ie {
+    @media all and (-ms-high-contrast:none){
+      @content;
+    }
+  }
+}
+
+// line-heightとmarginの調整
+$l-base: 20px;
+$l-font: 1rem;
+$l-height: 1.8;
+@mixin mb($l-base: 20px, $l-font: 1rem, $l-height: 1.5) {
+  margin-bottom: calc(#{$l-base} - (((#{$l-font} * #{$l-height}) - #{$l-font}) / 2));
+}
+@mixin ptb($l-base: 20px, $l-font: 1rem, $l-height: 1.5) {
+  padding-top: calc(#{$l-base} - (((#{$l-font} * #{$l-height}) - #{$l-font}) / 2));
+  padding-bottom: calc(#{$l-base} - (((#{$l-font} * #{$l-height}) - #{$l-font}) / 2));
+}

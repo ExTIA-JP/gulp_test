@@ -10,7 +10,8 @@ $(function() {
     smoothScroll();
 
     /* ページトップボタン */
-    //triggerPagetop();
+    var btnPagetop = new triggerPagetop();
+    //btnPagetop.init({ el: '.js_btnPagetop' });
 
     /* モーダル */
     var modal = new App.views.ModalView();

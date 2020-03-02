@@ -22,10 +22,10 @@ module.exports = {
       },
       style: {
         src: [
-          'assets/%type%/style/**/*.styl',
-          '!assets/%type%/style/_*/**/*.styl'
+          'assets/%type%/sass/**/*.scss',
+          '!assets/%type%/sass/_*/**/*.scss'
         ],
-        watch: 'assets/%type%/**/*.styl',
+        watch: 'assets/%type%/**/*.scss',
         dest: 'dist/%type%'
       },
       ejs: {
