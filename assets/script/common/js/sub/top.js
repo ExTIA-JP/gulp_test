@@ -7,19 +7,13 @@ $(function() {
   var views = App.views;
 
   /**
-   * インスタンス
+   * 初期処理
    */
-  var viewInstance = function() {
-
-
-
+  var pageInit = function() {
+    
   };
 
-
-
-  /* インスタンス */
-  $(window).load(function() {
-    viewInstance();
-  });
+  /* 初期処理 */
+  pageInit();
 
 });

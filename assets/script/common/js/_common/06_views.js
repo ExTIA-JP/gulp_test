@@ -1,68 +1,75 @@
-(function(app, window, decument, undefined) {
+/**
+ * モーダル
+ */
+app.views = {
 
-  /**
-   * ページ
-   */
-  app.views.PageView = (function() {
-    var constructor = function(el) {
+  ModalView: (function() {
+    var constructor = function() {
       this.$el = {};
-      this.$anchor = {};
-      this.isAnimate = false;
-      this.scrollSpeed = 500;
-      this.init(el);
+      this.$main = {};
+      this.$triggerClose = {};
+      this.$triggerOpen = {};
+      this.$page = {};
+      this.offsetTopOpened = 0;
       return this;
     };
     var proto = constructor.prototype;
-    proto.init = function(el) {
-      this.setEl(el);
+    proto.init = function(args) {
+      this.setEl(args.el);
+      this.setStyle();
       this.setEvents();
       return this;
     };
     proto.setEl = function(el) {
       this.$el = $(el);
-      this.$anchor = this.$el.find('a[href^="#"]');
+      this.$main = this.$el.find('.m_modal-window');
+      this.$triggerClose = this.$el.find('.m_modal__btnClose');
+      this.$triggerOpen = $('a[href="#' + this.$el.attr('id') + '"]');
+      this.$page = $('#PageView');
+      return this;
+    };
+    proto.setStyle = function() {
+      this.$el.hide();
       return this;
     };
     proto.setEvents = function() {
       var that = this;
-      this.$anchor.on('click', function(e) {
+      this.$triggerOpen.on('click', function(e) {
         e.preventDefault();
-        if(!that.isAnimate) {
-          that.smoothScroll($(this).attr('href'));
-          that.isAnimate = false;
-        }
-        return false;
+        that.openModal();
       });
-      $(window).on('scroll', function() {
-        if(!that.isAnimate) {
-          that.onScroll($(window).scrollTop());
-          that.isAnimate = false;
-        }
+      this.$triggerClose.on('click', function() {
+        that.closeModal();
       });
-      $(window).on('resize', function() {
-        that.onResize();
+      this.$el.on('click', function() {
+        that.closeModal();
+      });
+      this.$main.on('click', function(e) {
+        e.stopPropagation();
       });
       return this;
     };
-    proto.smoothScroll = function(href) {
-      this.isAnimate = true;
-      var $target = $(href === '#' || href === '' ? 'html' : href);
-      if($target.length > 0) {
-        var position = $target.offset().top;
-        $('html, body').animate({
-          scrollTop: position
-        }, this.scrollSpeed, 'swing');
-      }
+    proto.openModal = function() {
+      this.offsetTopOpened = $(window).scrollTop();
+      this.$page.css({
+        position: 'fixed',
+        top: -this.offsetTopOpened,
+        width: '100%'
+      });
+      this.$el.fadeIn();
       return this;
     };
-    proto.onScroll = function(scrollTop) {
-      this.isAnimate = true;
-      return this;
-    };
-    proto.onResize = function() {
+    proto.closeModal = function() {
+      this.$page.css({
+        position: 'static',
+        top: 'auto',
+        width: 'auto'
+      });
+      $(window).scrollTop(this.offsetTopOpened);
+      this.$el.fadeOut();
       return this;
     };
     return constructor;
-  })();
+  })()
 
-})(App, window, document);
+};

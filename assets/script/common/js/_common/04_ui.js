@@ -1,7 +1,3 @@
-(function(app, window, decument, undefined) {
+app.ui = {
 
-  app.ui = {
-
-  };
-
-})(App, window, document);
+};

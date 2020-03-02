@@ -1,7 +1,3 @@
-(function(app, window, decument, undefined) {
+app.utils = {
 
-  app.utils = {
-
-  };
-
-})(App, window, document);
+};

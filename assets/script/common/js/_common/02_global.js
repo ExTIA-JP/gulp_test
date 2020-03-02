@@ -1,7 +1,3 @@
-(function(app, window, decument, undefined) {
+app.global = {
 
-  app.global = {
-
-  };
-
-})(App, window, document);
+};

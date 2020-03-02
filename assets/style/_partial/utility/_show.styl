@@ -1,7 +1,13 @@
 /*----------------------------------------------------------
- layout
+ show
 ------------------------------------------------------------*/
 
-// media queries
-$mq-sp = "screen and (max-width: 767px)";
-$mq-pc = "screen and (min-width: 768px)";
+@media $mq-sp
+  .c_show-pc
+    display none !important
+
+@media $mq-pc
+  .c_show-sp
+    display none !important
+
+

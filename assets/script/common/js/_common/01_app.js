@@ -10,3 +10,4 @@
   window.App = app;
 
 })(window);
+(function(app, window, decument, undefined) {

@@ -1,36 +1,89 @@
 /*----------------------------------------------------------
  Reset
 ------------------------------------------------------------*/
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,
+small, strong, sub, sup, var, b, u, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, input, textarea,
+table, caption, tbody, thead, tfoot, tr, th, td,
+main, article, aside, canvas, details, embed, figure, figcaption, footer, header,
+menu, nav, output, ruby, section, summary, time, mark, audio, video
+  margin 0
+  padding 0
+  box-sizing border-box
+  line-height 1.5em
+  -ms-text-size-adjust 100%
+  -webkit-text-size-adjust 100%
+  word-break break-all
 
-body, div, section, article, aside, nav,
-h1, h2, h3, h4, h5, h6,
-span, time, figure, figcaption,
-p, blockquote, pre, address, code,
-dl, dt, dd, ol, ul, li,
-fieldset, form, legend, button,
-table, tbody, thead, tfoot, tr, th, td
-  margin: 0
-  padding: 0
-  line-height: $line_height_default
-  word-break: break-all
-
-ul, ol
-  list-style: none
-
-img
-  border: 0
-  vertical-align: bottom
-
-table
-  border-collapse: collapse
-
-input,
-select
-  vertical-align: middle
+h1, h2, h3, h4, h5, h6, th
+  font-size 100%
+  font-family inherit
 
 em
-  font-style: normal
+  font-style normal
+
+table
+  border-spacing 0
+  border-collapse collapse
+
+table, th, td
+  text-align left
+  border none
+
+ul, ol, li
+  list-style none
+
+img
+  max-width 100%
+  height auto
+  border 0
+  vertical-align top
+
+input[type=text],
+input[type=password],
+input[type=button],
+input[type=submit],
+button,
+select,
+textarea
+  -moz-appearance none
+  -webkit-appearance none
+  appearance none
+  outline none
+  font-size 100%
+  color inherit
+  line-height inherit
+  font-family inherit
+  font-weight normal
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder
+  color #ccc
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder
+  color #ccc
+
+input::-moz-placeholder,
+textarea::-moz-placeholder
+  color #ccc
+
+button::-moz-focus-inner,
+input::-moz-focus-inner
+  border 0
 
 button
-  background: none
-  border: none
+  background none
+  border none
+  outline none
+  cursor pointer
+
+select::-ms-expand
+  display none
+
+*,
+*:before,
+*:after
+  box-sizing border-box
